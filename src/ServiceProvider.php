@@ -51,7 +51,7 @@ class ServiceProvider extends AddonServiceProvider
         ], 'rapidez-collections');
 
         $this->publishes([
-            __DIR__.'/../config/brands.php' => config_path('brands.php'),
+            __DIR__.'/../config/statamic-brands.php' => config_path('statamic-brands.php'),
         ], 'config');
 
         return $this;
