@@ -20,11 +20,8 @@ php artisan vendor:publish --provider="Rapidez\StatamicBrands\ServiceProvider"
 ```
 
 ### Brand attribute code (optional)
-The default attribute code used for brands is `brand`, but it is also possible that another attribute is used for this. You can change this by adding the variable `BRAND_ATTRIBUTE_CODE` to the environment variables (`.env`). 
-For example:
-``` .env
-BRAND_ATTRIBUTE_CODE="manufacturer"
-```
+
+The default attribute code used for brands is `brand`, but it is also possible that another attribute is used for this. You can change this in `config/statamic-brands.php`.
 
 ### Multisite
 When configuring your multisite for Statamic, it is important to add the stores to the sites section in the published file `content/collections/brands.yaml`, for example:
