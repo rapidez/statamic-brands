@@ -28,7 +28,7 @@ class ServiceProvider extends AddonServiceProvider
 
     public function bootConfig(): self
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/brands.php', 'brands');
+        $this->mergeConfigFrom(__DIR__.'/../config/statamic-brands.php', 'statamic-brands');
 
         return $this;
     }
