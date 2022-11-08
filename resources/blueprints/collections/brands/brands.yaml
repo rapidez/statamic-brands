@@ -1,0 +1,181 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: Name
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          input_type: text
+          antlers: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: brand_code
+        field:
+          input_type: text
+          antlers: false
+          display: Code
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: read_only
+      -
+        handle: path
+        field:
+          generate: false
+          display: URL
+          type: slug
+          icon: slug
+          listable: true
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+      -
+        handle: show_on_page
+        field:
+          mode: select
+          create: false
+          collections:
+            - pages
+          display: 'Show on page'
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: slug
+        field:
+          type: text
+          localizable: true
+          input_type: text
+          antlers: false
+          display: Slug
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: hidden
+          validate:
+            - required
+          generate: true
+  meta_data:
+    display: 'Meta Data'
+    fields:
+      -
+        handle: meta_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Meta Title'
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: meta_description
+        field:
+          antlers: false
+          display: 'Meta Description'
+          type: textarea
+          icon: textarea
+          localizable: true
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  page_content:
+    display: 'Page Content'
+    fields:
+      -
+        handle: page_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Page Title'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          localizable: true
+      -
+        handle: description
+        field:
+          always_show_set_button: false
+          previews: true
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          remove_empty_nodes: false
+          display: Description
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          localizable: true
+      -
+        handle: short_description
+        field:
+          antlers: false
+          display: 'Short Description'
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          localizable: true
+      -
+        handle: image
+        field:
+          use_breakpoints: false
+          allow_ratio: false
+          allow_fit: true
+          breakpoints:
+            - sm
+            - md
+            - lg
+            - xl
+            - 2xl
+          container: assets
+          restrict: false
+          allow_uploads: true
+          display: Image
+          type: responsive
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+title: Brands
