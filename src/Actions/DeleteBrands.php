@@ -13,7 +13,9 @@ class DeleteBrands
             return;
         }
 
-        $deletedBrands = Entry::whereCollection('brands')->where('locale', $storeCode)->filter(fn ($deletedBrand) => !$brandCodes->contains($deletedBrand->get('brand_code')));
-        $deletedBrands->each(fn ($deletedBrand) => $deletedBrand->delete());
+        $deletedBrands = Entry::whereCollection('brands')
+            ->where('locale', $storeCode)
+            ->filter(fn ($deletedBrand) => !$brandCodes->contains($deletedBrand->get('brand_code')))
+            ->each(fn ($deletedBrand) => $deletedBrand->delete());
     }
 }
