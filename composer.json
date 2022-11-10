@@ -1,0 +1,23 @@
+{
+    "name": "rapidez/statamic-brands",
+    "require": {
+        "statamic/cms": "^3.3",
+        "rapidez/statamic": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rapidez\\StatamicBrands\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Brands",
+            "description": "Statamic Brands addon"
+        },
+        "laravel": {
+            "providers": [
+                "Rapidez\\StatamicBrands\\ServiceProvider"
+            ]
+        }
+    }
+}
