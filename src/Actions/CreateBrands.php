@@ -14,10 +14,12 @@ class CreateBrands
             return new Collection();
         }
 
-        return $brands->filter(fn ($brand) => !blank($brand->name) && !blank($brand->brand_code))->map(fn ($brand) => [
-            'title' => $brand->title,
-            'brand_code' => $brand->brand_code,
-            'path' => $brand->brand_code
-        ])->each(fn ($brand) => Entry::updateOrCreate($brand, 'brands', 'brand_code', $storeCode));
+        return $brands->filter(fn ($brand) => !blank($brand->name) && !blank($brand->brand_code))
+            ->map(fn ($brand) => [
+                'title' => $brand->title,
+                'brand_code' => $brand->brand_code,
+                'path' => $brand->brand_code
+            ])
+            ->each(fn ($brand) => Entry::updateOrCreate($brand, 'brands', 'brand_code', $storeCode));
     }
 }
