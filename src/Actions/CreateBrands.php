@@ -17,6 +17,7 @@ class CreateBrands
         return $brands->filter(fn ($brand) => !blank($brand->name) && !blank($brand->brand_code))
             ->map(fn ($brand) => [
                 'title' => $brand->title,
+                'slug' => $brand->brand_code,
                 'brand_code' => $brand->brand_code,
                 'path' => $brand->brand_code
             ])

@@ -34,7 +34,7 @@ class ImportBrands
                 'eav_attribute_option_value.value as title',
                 'brand_code.value as brand_code'
             ])
-                ->where('attribute_code', config('brands.brand_attribute_code'))
+                ->where('attribute_code', config('statamic-brands.brand_attribute_code'))
                 ->join('eav_attribute_option', 'eav_attribute_option.attribute_id', 'eav_attribute.attribute_id')
                 ->join('eav_attribute_option_value', function ($join) {
                     $join->on('eav_attribute_option_value.option_id', 'eav_attribute_option.option_id')
