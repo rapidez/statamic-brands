@@ -1,5 +1,11 @@
 # Changelog 
 
+## 0.1.3 - 2023-02-08
+
+### Fixed
+
+- Compatibility with the new rapidez/statamic version (fc7d1f4)
+
 ## 0.1.2 - 2023-01-31
 
 ### Fixed
