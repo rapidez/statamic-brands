@@ -2,10 +2,8 @@
 
 namespace Rapidez\StatamicBrands;
 
-use Rapidez\Statamic\Repositories\EntryRepository;
 use Rapidez\StatamicBrands\Commands\SyncBrandsCommand;
 use Statamic\Providers\AddonServiceProvider;
-use Statamic\Stache\Repositories\EntryRepository as StatamicEntryRepository;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -13,7 +11,6 @@ class ServiceProvider extends AddonServiceProvider
     {
         $this->bootCommands()
             ->bootConfig()
-            ->bootRepositories()
             ->bootPublishables();
     }
 
@@ -29,16 +26,6 @@ class ServiceProvider extends AddonServiceProvider
     public function bootConfig(): self
     {
         $this->mergeConfigFrom(__DIR__.'/../config/statamic-brands.php', 'statamic-brands');
-
-        return $this;
-    }
-
-    public function bootRepositories(): self
-    {
-        \Statamic::repository(
-            StatamicEntryRepository::class,
-            EntryRepository::class
-        );
 
         return $this;
     }

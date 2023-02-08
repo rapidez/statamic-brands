@@ -2,7 +2,7 @@
     "name": "rapidez/statamic-brands",
     "require": {
         "statamic/cms": "^3.3",
-        "rapidez/statamic": "*"
+        "rapidez/statamic": "~0.9"
     },
     "autoload": {
         "psr-4": {
@@ -18,6 +18,11 @@
             "providers": [
                 "Rapidez\\StatamicBrands\\ServiceProvider"
             ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
         }
     }
 }

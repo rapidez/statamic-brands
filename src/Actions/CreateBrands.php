@@ -4,10 +4,13 @@ namespace Rapidez\StatamicBrands\Actions;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Rapidez\Statamic\Actions\Traits\UpdateOrCreateEntry;
 use Statamic\Facades\Entry;
 
 class CreateBrands
 {
+    use UpdateOrCreateEntry;
+
     public function create(Collection $brands, string $storeCode): Collection
     {
         if ($brands->isEmpty()) {
@@ -21,6 +24,6 @@ class CreateBrands
                 'brand_code' => $brand->brand_code,
                 'path' => $brand->brand_code
             ])
-            ->each(fn ($brand) => Entry::updateOrCreate($brand, 'brands', 'brand_code', $storeCode));
+            ->each(fn ($brand) => self::updateOrCreate($brand, 'brands', 'brand_code', $storeCode));
     }
 }
