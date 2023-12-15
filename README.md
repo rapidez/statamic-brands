@@ -1,3 +1,6 @@
+**Deprecated and integrated within `rapidez/statamic`; please use https://github.com/rapidez/statamic**
+
+---
 
 # Rapidez Statamic Brands
 
